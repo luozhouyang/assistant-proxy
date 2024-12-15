@@ -21,6 +21,10 @@ test = [
     "pytest>=8.3.4",
     "pytest-asyncio>=0.25.0",
 ]
+dev = [
+    "alembic>=1.14.0",
+]
+
 [tool.pdm]
 distribution = false
 
