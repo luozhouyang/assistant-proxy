@@ -1,0 +1,44 @@
+[project]
+name = "assistant-proxy"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "luozhouyang", email = "zhouyang.luo@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.115.6",
+    "pydantic>=2.10.3",
+    "sqlalchemy>=2.0.36",
+    "uvicorn>=0.33.0",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.0",
+]
+[tool.pdm]
+distribution = false
+
+
+[tool.pdm.resolution]
+respect-source-order = true
+
+[[tool.pdm.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+
+[[tool.pdm.source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
